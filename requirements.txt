@@ -1,0 +1,14 @@
+adventofcode==23.0b1
+beautifulsoup4==4.12.3
+certifi==2024.8.30
+charset-normalizer==3.4.0
+idna==3.10
+markdown-it-py==3.0.0
+mdurl==0.1.2
+percache==0.4.4
+Pygments==2.18.0
+python-dotenv==1.0.1
+requests==2.32.3
+rich==13.9.4
+soupsieve==2.6
+urllib3==2.2.3
