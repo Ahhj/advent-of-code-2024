@@ -58,6 +58,6 @@ sample_input = textwrap.dedent(sample_input).strip()
 aoc.assert_p1(sample_input, 11)
 aoc.assert_p2(sample_input, 31)
 
-# # Submit solutions
+# Submit solutions
 aoc.submit_p1()
 aoc.submit_p2()
