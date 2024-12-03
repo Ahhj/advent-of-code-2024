@@ -13,6 +13,7 @@ def part1(raw: str) -> int:
     pattern = re.compile(r"(mul\(\d{1,3},\d{1,3}\))")
     total = 0
     for match in pattern.finditer(prepared):
+        # Extract and multiply the 1-3 digit numbers
         x, y = re.findall(r"\d{1,3}", match.group(0))
         total += int(x) * int(y)
 
@@ -20,7 +21,10 @@ def part1(raw: str) -> int:
 
 
 def part2(raw: str) -> int:
+    # Prepend a 'do()' for splitting the first section  
     prepared = "do()" + prepare_input(raw)
+
+    # Split into sections i.e. 'dont()<ignore this>do()<keep this>'
     do_sections = []
     for section in prepared.split("don't()"):
         _, *do_parts = section.split("do()")

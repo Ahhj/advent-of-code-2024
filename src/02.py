@@ -28,21 +28,28 @@ def is_safe(row: list[int]) -> bool:
 
 def part1(raw: list[str]) -> int:
     prepared = prepare_input(raw)
-    return sum(map(lambda row: is_safe(row), prepared))
+    return sum(map(is_safe, prepared))
 
 
 def leave_one_out(x: list[T1]) -> list[list[T1]]:
     combinations = []
     for i in range(len(x)):
         x_ = x[:]
-        x_.pop(i)
+        x_.pop(i)  # Remove element
         combinations.append(x_)
     return combinations
 
 
 def part2(raw: list[str]) -> int:
     prepared = prepare_input(raw)
-    return sum(map(lambda row: any(map(is_safe, leave_one_out(row))), prepared))
+
+    # Copy each row with one element removed
+    combinations = map(leave_one_out, prepared)
+
+    # Check if any of the LOO combinations are safe
+    any_safe = map(lambda row: any(map(is_safe, row)), combinations)
+
+    return sum(any_safe)
 
 
 aoc = AoC(day=2, year=2024, part_1=part1, part_2=part2)
