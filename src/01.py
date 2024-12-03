@@ -1,7 +1,8 @@
-from adventofcode import AoC
 import textwrap
-from itertools import starmap
 from collections import Counter
+from itertools import starmap
+
+from adventofcode import AoC
 
 
 def split_pairs(pairs: list[str]) -> tuple[list[str], list[str]]:
@@ -22,15 +23,15 @@ def prepare_input(raw: list[str]) -> tuple[list[int], list[int]]:
 
 
 def part1(raw: list[str]) -> int:
-    left, right = prepare_input(raw)    
+    left, right = prepare_input(raw)
 
     # Pair the sorted ids
     ids_sorted = zip(sorted(left), sorted(right))
-    
+
     # Calculate distances
-    distances = starmap(lambda x, y: abs(x-y), ids_sorted)
+    distances = starmap(lambda x, y: abs(x - y), ids_sorted)
     total_distance = sum(distances)
-    
+
     return total_distance
 
 

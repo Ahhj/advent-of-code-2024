@@ -1,6 +1,7 @@
-from adventofcode import AoC
-import textwrap
 import re
+import textwrap
+
+from adventofcode import AoC
 
 
 def prepare_input(raw: str) -> str:
@@ -24,9 +25,9 @@ def part2(raw: str) -> int:
     for section in prepared.split("don't()"):
         _, *do_parts = section.split("do()")
         do_sections += do_parts
-    
+
     return part1("".join(do_sections))
-    
+
 
 aoc = AoC(day=3, year=2024, part_1=part1, part_2=part2)
 

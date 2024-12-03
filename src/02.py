@@ -1,15 +1,15 @@
-from adventofcode import AoC
 import textwrap
-from typing import Iterable, Callable, TypeVar
+from typing import Callable, Iterable, TypeVar
+
 import numpy as np
+from adventofcode import AoC
 
 T1 = TypeVar("T1")
 T2 = TypeVar("T2")
 
 
 def flatmap(
-    func: Callable[[T1], T2], 
-    matrix: Iterable[Iterable[T1]]
+    func: Callable[[T1], T2], matrix: Iterable[Iterable[T1]]
 ) -> Iterable[Iterable[T2]]:
     return map(lambda row: map(func, row), matrix)
 
@@ -21,7 +21,7 @@ def prepare_input(raw: list[str]) -> list[list[int]]:
 
 def is_safe(row: list[int]) -> bool:
     diff = np.diff(row)
-    increasing_check = (1 <= diff) & (diff <= 3) 
+    increasing_check = (1 <= diff) & (diff <= 3)
     decreasing_check = (-3 <= diff) & (diff <= -1)
     return increasing_check.all() | decreasing_check.all()
 
