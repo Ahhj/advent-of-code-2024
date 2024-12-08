@@ -93,9 +93,9 @@ sample_input = """
 sample_input = textwrap.dedent(sample_input).strip()
 
 # Run function with sample input and assert the expected result
-# aoc.assert_p1(sample_input, 143)
+aoc.assert_p1(sample_input, 143)
 aoc.assert_p2(sample_input, 123)
 
 # Submit solutions
-# aoc.submit_p1()
+aoc.submit_p1()
 aoc.submit_p2()
