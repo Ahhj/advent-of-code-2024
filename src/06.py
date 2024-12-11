@@ -22,7 +22,7 @@ POSITION_UPDATES: dict[Direction, Position] = {
 }
 
 
-def prepare_input(raw: str) -> str:
+def prepare_input(raw: str) -> tuple[Position, Direction, list[Position], tuple[int, int]]:
     position = None
     direction = None
     obstacles = []
